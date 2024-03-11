@@ -1,0 +1,14 @@
+def unsorted(arr):
+        max_value=max(arr)
+        count=[0]*(max_value+1)
+        while len(arr)>0:
+            num=arr.pop(0)
+            count[num] +=1
+        for i in range(len(count)):
+         while count[i]>0:
+            arr.append(i)
+            count[i] -=1
+        return arr
+Array=[1,13,3,4,5,3,0,12,0]    
+sortedArr=unsorted(Array)
+print("sorted array:",sortedArr)
